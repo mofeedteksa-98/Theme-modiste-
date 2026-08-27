@@ -1,0 +1,37 @@
+{#
+  Header Component — Modiste
+#}
+<header class="site-header">
+  {% if advertisement %}
+    <div class="announce-bar">
+      {{ advertisement.description }}
+    </div>
+  {% endif %}
+
+  <div class="wrap nav-wrap">
+    <a href="{{ store.url|default('/') }}" class="logo">
+      {{ store.name|default('Modiste') }}<span>.</span>
+    </a>
+
+    <nav class="nav-links">
+      {% for item in menus %}
+        <a href="{{ item.url }}">{{ item.title }}</a>
+      {% endfor %}
+    </nav>
+
+    <div class="nav-icons">
+      <a href="#" aria-label="بحث">⌕</a>
+      <a href="{{ '/cart'|asset }}">
+        {{ trans('pages.cart.title')|default('حقيبتي') }}{% if cart %} ({{ cart.count|default(0) }}){% endif %}
+      </a>
+    </div>
+  </div>
+
+  {% if breadcrumbs %}
+    <nav class="wrap breadcrumbs">
+      {% for crumb in breadcrumbs %}
+        <a href="{{ crumb.url }}">{{ crumb.title }}</a>{% if not loop.last %} / {% endif %}
+      {% endfor %}
+    </nav>
+  {% endif %}
+</header>
