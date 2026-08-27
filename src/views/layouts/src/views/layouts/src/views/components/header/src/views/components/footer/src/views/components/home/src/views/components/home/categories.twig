@@ -1,0 +1,29 @@
+{#
+  Home / Featured Categories — Modiste
+#}
+<section class="section wrap" id="shop">
+  <div class="section-head">
+    <div>
+      <span class="tag">تسوّقي حسب الفئة</span>
+      <h2>ثلاث خزائن، ثلاث حالات</h2>
+    </div>
+    <p>من الإطلالة اليومية إلى القطعة التي تُحفظ لموسم كامل.</p>
+  </div>
+
+  <div class="cat-grid">
+    {% if categories %}
+      {% for cat in categories|slice(0, 3) %}
+        <a href="{{ cat.url }}" class="cat-card c{{ loop.index }}">
+          <div>
+            <h3>{{ cat.name }}</h3>
+            <div class="count">{{ cat.products_count|default(0) }} قطعة</div>
+          </div>
+        </a>
+      {% endfor %}
+    {% else %}
+      <div class="cat-card c1"><div><h3>عبايات وقفاطين</h3><div class="count">٣٤ قطعة</div></div></div>
+      <div class="cat-card c2"><div><h3>إطلالات المساء</h3><div class="count">١٨ قطعة</div></div></div>
+      <div class="cat-card c3"><div><h3>يوميّات مريحة</h3><div class="count">٥٢ قطعة</div></div></div>
+    {% endif %}
+  </div>
+</section>
