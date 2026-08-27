@@ -1,0 +1,29 @@
+{#
+  Product Card — Modiste
+#}
+<div class="prod-card">
+  <a href="{{ product.url|default('#') }}" class="prod-img" style="background-image:url('{{ product.image|default('') }}')">
+    {% if product.is_new|default(false) %}
+      <span class="badge">جديد</span>
+    {% elseif product.best_seller|default(false) %}
+      <span class="badge">الأكثر مبيعًا</span>
+    {% endif %}
+  </a>
+  <div class="prod-info">
+    <h4>{{ product.name|default('اسم المنتج') }}</h4>
+    <div class="price">
+      {% if product.sale_price %}
+        {{ product.sale_price|currency }}
+      {% else %}
+        {{ product.price|default(0)|currency }}
+      {% endif %}
+    </div>
+    {% if product.colors %}
+      <div class="swatches">
+        {% for color in product.colors %}
+          <span class="swatch{% if loop.first %} active{% endif %}" style="background:{{ color.hex }};" data-color="{{ color.hex }}"></span>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</div>
