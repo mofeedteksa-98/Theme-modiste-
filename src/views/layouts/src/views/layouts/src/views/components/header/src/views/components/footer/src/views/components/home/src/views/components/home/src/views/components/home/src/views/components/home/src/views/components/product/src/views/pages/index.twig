@@ -1,0 +1,13 @@
+{#
+  Home Page — Modiste
+#}
+{% extends 'layouts/master.twig' %}
+
+{% block title %}{{ store.name|default('Modiste') }} — أزياء تُروى بعناية{% endblock %}
+
+{% block content %}
+  {% component 'home.hero' %}
+  {% component 'home.categories' %}
+  {% component 'home.products' %}
+  {% component 'home.editorial' %}
+{% endblock %}
