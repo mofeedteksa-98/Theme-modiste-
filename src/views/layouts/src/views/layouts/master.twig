@@ -1,0 +1,26 @@
+{#
+  Master Layout — Modiste
+#}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  {% hook 'head:start' %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{{ store.name|default('Modiste') }}{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ 'styles/style.css'|asset }}">
+  {% hook head %}
+  {% hook 'head:end' %}
+</head>
+<body class="{% hook 'body:classes' %}">
+  {% hook 'body:start' %}
+  {% component 'header.header' %}
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+  {% component 'footer.footer' %}
+  {% hook 'body:end' %}
+</body>
+</html>
