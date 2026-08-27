@@ -1,0 +1,15 @@
+{
+  "common": {
+    "search": "Search",
+    "shop": "Shop",
+    "help": "Help",
+    "follow": "Follow us",
+    "email": "Your email",
+    "subscribe": "Subscribe"
+  },
+  "pages": {
+    "cart": {
+      "title": "My Bag"
+    }
+  }
+}
