@@ -1,0 +1,39 @@
+{#
+  Footer Component — Modiste
+#}
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <div>
+      <div class="logo">{{ store.name|default('Modiste') }}<span>.</span></div>
+      <p>{{ store.description|default('علامة أزياء تروي التفاصيل قبل أن تُظهرها، لخزانة تشبه صاحبتها.') }}</p>
+      <form class="newsletter" action="#" method="post">
+        <input type="email" name="email" placeholder="{{ trans('common.email')|default('بريدك الإلكتروني') }}" required>
+        <button type="submit">{{ trans('common.subscribe')|default('اشتركي') }}</button>
+      </form>
+    </div>
+
+    <div>
+      <h6>{{ trans('common.shop')|default('تسوّقي') }}</h6>
+      {% for item in menus %}
+        <a href="{{ item.url }}">{{ item.title }}</a>
+      {% endfor %}
+    </div>
+
+    <div>
+      <h6>{{ trans('common.help')|default('مساعدة') }}</h6>
+      <a href="{{ '/pages/size-guide'|asset }}">دليل المقاسات</a>
+      <a href="{{ '/pages/shipping'|asset }}">الشحن والاستبدال</a>
+    </div>
+
+    <div>
+      <h6>{{ trans('common.follow')|default('تابعينا') }}</h6>
+      {% if store.instagram %}<a href="{{ store.instagram }}">إنستقرام</a>{% endif %}
+      {% if store.snapchat %}<a href="{{ store.snapchat }}">سناب شات</a>{% endif %}
+      {% if store.tiktok %}<a href="{{ store.tiktok }}">تيك توك</a>{% endif %}
+    </div>
+  </div>
+
+  <div class="wrap foot-bottom">
+    <span>© {{ "now"|date("Y") }} {{ store.name|default('Modiste') }} — كل الحقوق محفوظة</span>
+  </div>
+</footer>
