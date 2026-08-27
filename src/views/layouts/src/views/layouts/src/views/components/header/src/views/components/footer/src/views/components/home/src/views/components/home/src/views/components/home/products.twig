@@ -1,0 +1,22 @@
+{#
+  Home / Featured Products — Modiste
+#}
+<section class="section wrap" style="padding-top:0;">
+  <div class="section-head">
+    <div>
+      <span class="tag">الأكثر رغبة</span>
+      <h2>وصل حديثًا</h2>
+    </div>
+    <p>اختاري اللون قبل الإضافة إلى الحقيبة — المعاينة فورية.</p>
+  </div>
+
+  <div class="prod-grid">
+    {% if products %}
+      {% for product in products|slice(0, 4) %}
+        {% include 'components/product/card.twig' with { product: product } %}
+      {% endfor %}
+    {% else %}
+      <p>لا توجد منتجات مضافة بعد — أضيفي منتجات من لوحة تحكم سلة لتظهر هنا.</p>
+    {% endif %}
+  </div>
+</section>
