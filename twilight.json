@@ -1,36 +1,4 @@
 {
   "version": "1.0.0",
-  "theme_name": "Modiste",
-  "repo_url": "https://github.com/mofeedteksa-98/theme-modiste",
-  "support_url": "https://www.anthropic.com",
-  "components": {
-    "home.hero": {
-      "path": "home.hero",
-      "name": {
-        "ar": "الواجهة الرئيسية",
-        "en": "Hero Banner"
-      }
-    },
-    "home.categories": {
-      "path": "home.categories",
-      "name": {
-        "ar": "تصنيفات مختارة",
-        "en": "Featured Categories"
-      }
-    },
-    "home.products": {
-      "path": "home.products",
-      "name": {
-        "ar": "منتجات مختارة",
-        "en": "Featured Products"
-      }
-    },
-    "home.editorial": {
-      "path": "home.editorial",
-      "name": {
-        "ar": "اقتباس تحريري",
-        "en": "Editorial Quote"
-      }
-    }
-  }
+  "theme_name": "Modiste"
 }
