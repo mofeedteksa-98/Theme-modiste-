@@ -1,8 +1,8 @@
 {
   "version": "1.0.0",
   "theme_name": "Modiste",
-  "repo_url": "https://github.com/YOUR-GITHUB-USERNAME/theme-modiste",
-  "support_url": "https://your-support-page.example.com",
+  "repo_url": "https://github.com/mofeedteksa-98/theme-modiste",
+  "support_url": "https://www.anthropic.com",
   "components": {
     "home.hero": {
       "path": "home.hero",
