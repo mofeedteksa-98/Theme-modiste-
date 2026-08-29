@@ -3,7 +3,6 @@
   "theme_name": "Modiste",
   "repo_url": "https://github.com/YOUR-GITHUB-USERNAME/theme-modiste",
   "support_url": "https://your-support-page.example.com",
-
   "components": {
     "home.hero": {
       "path": "home.hero",
